@@ -36,9 +36,7 @@ module Groonga
       select.exec
     end
 
-    class SelectResult < Struct.new(:return_code, :start_time, :elapsed,
-                                    :error_message,
-                                    :n_hits, :columns, :values,
+    class SelectResult < Struct.new(:n_hits, :columns, :values,
                                     :drill_down)
       class << self
         def parse(json, drill_down_keys)
